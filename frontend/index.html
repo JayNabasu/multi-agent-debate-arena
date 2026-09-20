@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Agent AI Debate Arena | Consensus & Reasoning Swarm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="arena-container">
+    <!-- Header -->
+    <header class="arena-nav">
+      <div class="brand">
+        <div class="brand-badge">SWARM</div>
+        <div>
+          <h1>Multi-Agent AI Debate Arena</h1>
+          <p class="subtitle">Autonomous Multi-Perspective Deliberation & Consensus Engine • By <a href="https://github.com/JayNabasu" target="_blank">Jerry Nabasu</a></p>
+        </div>
+      </div>
+      <div class="agent-roster" id="agent-roster">
+        <!-- Agent Pills Rendered Here -->
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="arena-main">
+      <!-- Input Panel -->
+      <section class="topic-panel">
+        <div class="input-wrapper">
+          <label for="topic-input">ENTER DEBATE PROPOSITION OR ARCHITECTURAL QUESTION</label>
+          <div class="input-row">
+            <input type="text" id="topic-input" placeholder="e.g. Should mission-critical banking core engines migrate to serverless microservices?">
+            <button type="button" id="btn-start-debate" class="btn-primary">
+              <span id="btn-text">Initiate Swarm Deliberation</span>
+              <span id="spinner" class="spinner" style="display: none;"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="presets-row">
+          <span class="preset-title">PRESET DILEMMAS:</span>
+          <button type="button" class="btn-preset" data-topic="Should mission-critical financial systems migrate to serverless event-driven architectures?">Serverless Financial Cores</button>
+          <button type="button" class="btn-preset" data-topic="Is a modular monolith superior to microservices for early-to-mid stage engineering organizations?">Monolith vs Microservices</button>
+          <button type="button" class="btn-preset" data-topic="Should autonomous AI agents possess unrestricted write access to production databases without human gating?">Autonomous DB Agents</button>
+        </div>
+      </section>
+
+      <!-- Consensus Outcome Header (Hidden Initially) -->
+      <section id="consensus-banner" class="consensus-banner" style="display: none;">
+        <div class="verdict-box">
+          <span class="verdict-label">SWARM CONSENSUS VERDICT</span>
+          <h2 id="verdict-text">STRONGLY ENDORSED WITH SAFEGUARDS</h2>
+          <p id="synthesis-text" class="synthesis-desc"></p>
+        </div>
+        <div class="gauge-box">
+          <span class="gauge-label">Consensus Index</span>
+          <div class="gauge-value" id="consensus-index">88%</div>
+        </div>
+      </section>
+
+      <!-- Debate Feed -->
+      <section class="feed-section">
+        <div class="feed-header">
+          <h3>CHRONOLOGICAL DELIBERATION STREAM</h3>
+          <span id="round-indicator" class="round-indicator" style="display: none;">Round 1: Opening Positions</span>
+        </div>
+
+        <div id="feed-container" class="feed-container">
+          <div class="empty-feed">
+            <div class="empty-icon">⚖️</div>
+            <h3>The Arena is Idle</h3>
+            <p>Enter a technical or governance topic above to trigger autonomous cross-examination between the Architect, Skeptic, Ethicist, and Pragmatist.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
